@@ -1,4 +1,6 @@
-## API CMS 
+## API CMS
+
+#### Essa API faz parte do PROGRAMA DE DESENVOLVIMENTO DA LABS. Ela foi criado para fins didaticos. A mesma serve para treinar e por em pratica os conhecimentos básicos do AngularJS.  
 
 #### CONFIGURAÇÃO DO MONGO
 

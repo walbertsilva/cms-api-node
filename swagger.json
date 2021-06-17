@@ -1,0 +1,312 @@
+{
+    "info": {
+      "title": "PROGRAMA ESTÁGIO",
+      "version": "1.0.0",
+      "description": "CMS API"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "swagger": "2.0",
+    "paths": {      
+        "/category": {
+            "get": {
+                "description": "Retorna todas as categorias",
+                "tags": ["Category"],
+                "produces": ["application/json"],
+                "responses": {
+                        "200": {
+                            "description": "categorys"
+                        }
+                    }
+            },
+            "put": {
+                "description": "Atualiza a categoria",
+                "tags": ["Category"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/name"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                    "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "description": "Cadastra a categoria",
+                "tags": ["Category"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/name"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                    "description": "OK"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deleta a categoria",
+                "tags": ["Category"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                    "description": "OK"
+                    }
+                }
+            }
+        },
+        "/category/{id}": {
+            "get": {
+                "description": "Retorna uma categoria pelo seu id",
+                "tags": ["Category"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/id"
+                    }
+                ],
+                "responses": {
+                        "200": {
+                            "description": "category"
+                        }
+                    }
+            }
+        },
+        "/content": {
+            "get": {
+                "description": "Retorna todos os conteudos",
+                "tags": ["Contents"],
+                "produces": ["application/json"],
+                "responses": {
+                        "200": {
+                            "description": "contents"
+                        }
+                    }
+            },
+            "put": {
+                "description": "Atualiza os conteudos",
+                "tags": ["Contents"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/name"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                    "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "description": "Cadastra o conteúdo",
+                "tags": ["Contents"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/name"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                    "description": "OK"
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deleta o conteúdo",
+                "tags": ["Contents"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                    "description": "OK"
+                    }
+                }
+            }
+        },
+        "/content/{id}": {
+            "get": {
+                "description": "Retorna um conteudo pelo seu id",
+                "tags": ["Contents"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/id"
+                    }
+                ],
+                "responses": {
+                        "200": {
+                            "description": "contents"
+                        }
+                    }
+            }
+        },
+        "/blog/category": {
+            "get": {
+                "description": "Retorna as categorias públicas",
+                "tags": ["Blog"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/id"
+                    }
+                ],
+                "responses": {
+                        "200": {
+                            "description": "categorys"
+                        }
+                    }
+            }
+        },
+        "/blog/content": {
+            "get": {
+                "description": "Retorna os conteúdos (API PÚBLICA)",
+                "tags": ["Blog"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/id"
+                    }
+                ],
+                "responses": {
+                        "200": {
+                            "description": "contents"
+                        }
+                    }
+            }
+        },
+        "/blog/content/category/{id}": {
+            "get": {
+                "description": "Retorna os conteúdos pela sua categoria (API PÚBLICA)",
+                "tags": ["Blog"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/id"
+                    }
+                ],
+                "responses": {
+                        "200": {
+                            "description": "contents"
+                        }
+                    }
+            }
+        },
+        "/blog/content/{id}": {
+            "get": {
+                "description": "Retorna o conteudp pelo seu id (API PÚBLICA)",
+                "tags": ["Blog"],
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/id"
+                    }
+                ],
+                "responses": {
+                        "200": {
+                            "description": "contents"
+                        }
+                    }
+            }
+        }
+    },
+    
+    
+    "definitions": {
+      "Category": {
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "Contents": {
+        "required": ["title", "category", "situation", "releaseDate", "releaseTime", "content", "image"],
+        "properties": {
+            "title": {
+                "type": "string"
+            },
+             "category": {
+                "type": "string"
+            },
+            "situation": {
+                "type": "string"
+            },
+            "releaseDate": {
+                "type": "string"
+            },
+            "releaseTime": {
+                "type": "string"
+            },
+            "content": {
+                "type": "string"
+            },
+            "image": {
+                "type": "string"
+            }
+        }
+      }
+    },
+
+    "responses": {},
+
+    "parameters": {
+        "name": {
+            "name": "name",
+            "description": "Nome.",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+        },
+        "id": {
+            "name": "id",
+            "description": "id",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+        },
+        "description": {
+            "name": "description",
+            "description": "description",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+        }
+    },
+
+    "securityDefinitions": {},
+
+    "tags": [
+        {
+            "name": "Category",
+            "description": "Category"
+        },
+        {
+            "name": "Contents",
+            "description": "Contents"
+        },
+        {
+            "name": "Blog",
+            "description": "Blog"
+        }
+    ]
+  }
